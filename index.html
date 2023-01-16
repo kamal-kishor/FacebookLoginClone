@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> facebook registration page </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="js/script.js"></script> -->
+
+    <script type="text/javascript">
+        // Count All INPUT Field's
+        // $(function(){
+        //     var n = $(':input').length;
+        // });
+        function regvalidate() {
+
+            //Give the ERROR Message to the different INPUT field.
+            var msg;
+            if (form1.fname.value === "") {
+                msg = "Please fill your Name?";
+            } else { msg = null; }
+            document.getElementById('msg1').innerText = msg;
+
+            if (form1.sname.value === "") {
+                msg = "What\'s your Surname?";
+            } else { msg = null; }
+            document.getElementById('msg2').innerText = msg;
+
+            var validRegex = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+            if (!validRegex.test(form1.emob.value)) {
+                msg = "Invalid email";
+            } else { msg = null; }
+            document.getElementById('msg3').innerText = msg;
+
+            if (form1.newpass.value === "") {
+                msg = "Password must be contain 8 charactor with one special charactor.";
+            } else { msg = null; }
+            document.getElementById('msg4').innerText = msg;
+
+            if (form1.data.value === "") {
+                msg = "Wrong Date format.";
+            } else { msg = null; }
+            document.getElementById('msg5').innerText = msg;
+
+            if (form1.optradio.value === "") {
+                msg = "Specify the Gender";
+            } else { msg = null; }
+            document.getElementById('msg6').innerText = msg;
+
+            //Give RED Color Border on the Error Field.
+            const form = document.getElementById('signup')
+            Array.from(form.elements).forEach(element => {
+                if (element.value === "") {
+                    element.style.border = "1.5px solid red"
+                }
+            });
+        }  
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="head">
+            <div class="container">
+                <div class="header">
+                    <div class="footer-head">
+                        <img src="fbicon.svg">
+                    </div>
+                </div>
+
+                <div class="form">
+                    <div class="details">
+                        <h1>Create a new account</h1>
+                        <h2>It's quick and easy.</h2>
+
+                        <!-- SignUp Form  -->
+                        <form name="form1" action="#" method="post" id="signup">
+                            <div class="user-details">
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 ">
+                                        <input type="text" name="fname" id="fname" placeholder="First name" required
+                                            oninvalid="this.setCustomValidity('What\'s your name?')"
+                                            oninput="this.setCustomValidity('')">
+                                        <span id="msg1" class="errorinput"> </span>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 ">
+                                        <input type="text" name="sname" id="sname" placeholder="Surname" required
+                                            oninvalid="this.setCustomValidity('What\'s your Surname?')"
+                                            oninput="this.setCustomValidity('')">
+                                        <span id="msg2" class="errorinput"> </span>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" name="emob" id="emob" value=""
+                                            placeholder="Mobile number or Email address" required
+                                            oninvalid="this.setCustomValidity('You\'ll use this when you log in and if you ever need to reset your password.')"
+                                            oninput="this.setCustomValidity('')">
+                                        <span id="msg3" class="errorinput"> </span>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input pattern=".{8,}" type="password" name="newpass" id="newpass" value=""
+                                            placeholder="New Password" required
+                                            oninvalid="this.setCustomValidity('Enter a combination of at least six numbers, letters and punctuation marks \(such as ! and &\).')"
+                                            oninput="this.setCustomValidity('')">
+                                        <span id="msg4" class="errorinput"> </span>
+                                    </div>
+                                </div>
+
+                                <p style="font-size: 12px; color: #606770; padding-top: 20px; margin: 0;">Date of Birth
+                                </p>
+
+                                <div class="row" style="padding:0px;">
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <div class="select">
+                                            <select name="slt" name="data" id="data" value="" required
+                                                oninvalid="this.setCustomValidity('Please Enter Valid Date.')"
+                                                oninput="this.setCustomValidity('')">
+                                                <option value=""></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <div class="select">
+                                            <select name="slt" name="data" id="data" value="" required
+                                                oninvalid="this.setCustomValidity('Please Enter Valid Date.')"
+                                                oninput="this.setCustomValidity('')">
+                                                <option value=" "></option>
+                                                <option value="january">Jan</option>
+                                                <option value="febuary">Fab</option>
+                                                <option value="march">Mar</option>
+                                                <option value="april">April</option>
+                                                <option value="may">May</option>
+                                                <option value="june">June</option>
+                                                <option value="july">July</option>
+                                                <option value="august">Aug</option>
+                                                <option value="september">Sep</option>
+                                                <option value="october">Oct</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <div class="select">
+                                            <select name="slt" name="data" id="data" value="" required
+                                                oninvalid="this.setCustomValidity('Please Enter Valid Date.')"
+                                                oninput="this.setCustomValidity('')">
+                                                <option value=" "></option>
+                                                <option value="1">2022</option>
+                                                <option value="1">2021</option>
+                                                <option value="1">2020</option>
+                                                <option value="1">2019</option>
+                                                <option value="1">2018</option>
+                                                <option value="1">2017</option>
+                                                <option value="1">2016</option>
+                                                <option value="1">2015</option>
+                                                <option value="1">2014</option>
+                                                <option value="1">2013</option>
+                                            </select>
+                                        </div>
+                                        <span id="msg5" class="errorinput"> </span>
+                                    </div>
+                                </div>
+
+                                <p style="font-size: 12px; padding-top: 20px; margin: 0; color: #606770; ">Gender</p>
+
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <label class="radio-inline" id="gender" name="female" value="" required
+                                            oninvalid="this.setCustomValidity('specify gender.')"
+                                            oninput="this.setCustomValidity('')">
+                                            <input type="radio" name="optradio">Female
+                                        </label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <label class="radio-inline" id="gender" name="male" value="" required
+                                            oninvalid="this.setCustomValidity('specify gender.')"
+                                            oninput="this.setCustomValidity('')">
+                                            <input type="radio" name="optradio">Male
+                                        </label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <label class="radio-inline" id="gender" name="others" value="" required
+                                            oninvalid="this.setCustomValidity('specify gender.')"
+                                            oninput="this.setCustomValidity('')">
+                                            <input type="radio" name="optradio">Others
+                                        </label>
+                                        <span id="msg6" class="errorinput"> </span>
+                                    </div>
+                                </div>
+
+                                <p style=" padding-top: 25px;" class="fdisclamer">People who use our service may have
+                                    uploaded your contact information to Facebook. <a href=#> Learn more</a>
+                                    <br>By clicking Sign Up, you agree to our Terms, <a href="#"> Privacy Policy </a>and
+                                    <a href="#">Cookies Policy</a>. You may receive SMS notifications from us and can
+                                    opt out at any time.
+                                </p>
+
+                                <div class="row">
+                                    <button class="submit" id="submit" type="submit" value="Submit"
+                                        style="margin-left: 110px; margin-top: 8px;" onclick="regvalidate()">
+                                        Sign Up</button>
+                                </div>
+
+                                <div class="row">
+                                    <a class="footer-link" href="#"> Already have an account?</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-details">
+                <div class="container">
+                    <ul>
+                        <li> <a href="#">English (UK)</a> </li>
+                        <li> <a href="#">हिन्दी </a> </li>
+                        <li> <a href="#">اردو </a> </li>
+                        <li> <a href="#">ਪੰਜਾਬੀ </a> </li>
+                        <li> <a href="#">বাংলা</a></li>
+                        <li> <a href="#">ગુજરાતી</a> </li>
+                        <li> <a href="#">मराठी</a> </li>
+                        <li> <a href="#">தமிழ்</a> </li>
+                        <li> <a href="#">తెలుగు</a> </li>
+                        <li> <a href="#">മലയാളം</a> </li>
+                        <li> <a href="#">ಕನ್ನಡ</a> </li>
+                    </ul>
+
+                    <div class="footer-line"> </div>
+
+                    <div class="footer-children">
+                        <ul>
+                            <li><a href="#">Fundraisers</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Voting </a></li>
+                            <li><a href="#">Information</a></li>
+                            <li><a href="#">Centre</a></li>
+                            <li><a href="#">Groups</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Createad</a></li>
+                            <li><a href="#">Create </a></li>
+                            <li><a href="#">Page</a></li>
+                            <li><a href="#">Developers</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Cookies</a></li>
+                            <li><a href="#">AdChoices</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">HelpContact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1> dropdown menu</h1>
+        <div class="select">
+            <select name="slt" id="slt">
+                <option>computer Science</option>
+                <option value="1">os</option>
+                <option value="1">ds</option>
+                <option value="1">ntw</option>
+                <option value="1">iot</option>
+            </select>
+        </div>
+    </center>
+</body>
+</html>
+
+
+
+<style>
+    
+.dropdown {
+    width: 100%;
+    border: #000;
+    position: relative;
+    display: inline-block;
+    border: ridge;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.dropbtn {
+    background-color: #fff;
+    color: #000;
+    padding: 4px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    /* border: ridge;
+    border-width: 2px;
+    border-radius: 5px; */
+    text-align: left;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 90px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border: ridge;
+    border-width: 2px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+}
+</style>
+
+
+<div class="row" style="padding: 0px;">
+    <div class="col-md-4 col-sm-4 col-xs-4">
+        <div class="dropdown">
+            <button class="dropbtn" placeholder="14"></button>
+            <div class="dropdown-content">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+                <a href="#">11</a>
+                <a href="#">12</a>
+                <a href="#">13</a>
+                <a href="#">14</a>
+                <a href="#">15</a>
+                <a href="#">16</a>
+                <a href="#">17</a>
+                <a href="#">18</a>
+                <a href="#">19</a>
+                <a href="#">20</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-4 col-xs-4">
+        <div class="dropdown">
+            <button class="dropbtn">Sep</button>
+            <div class="dropdown-content">
+                <a href="#">Jan</a>
+                <a href="#">Feb</a>
+                <a href="#">Mar</a>
+                <a href="#">April</a>
+                <a href="#">May</a>
+                <a href="#">June</a>
+                <a href="#">July</a>
+                <a href="#">Aug</a>
+                <a href="#">Sep</a>
+                <a href="#">Oct</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-4">
+        <div class="dropdown">
+            <button class="dropbtn">2022</button>
+            <div class="dropdown-content">
+                <a href="#">2022</a>
+                <a href="#">2023</a>
+                <a href="#">2024</a>
+                <a href="#">2025</a>
+                <a href="#">2026</a>
+                <a href="#">2027</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="radio-flex">
+        <div class="radio-inline">
+            <label class="radio-inline">
+                <input type="radio" name="optradio">Male
+            </label>
+        </div>
+        <div class="radio-inline">
+            <label class="radio-inline">
+                <input type="radio" name="optradio">Female
+            </label>
+        </div>
+        <div class="radio-item-3">
+            <label class="radio-inline">
+                <input type="radio" name="optradio">Custom
+            </label>
+        </div>
+    </div>
+</div>
